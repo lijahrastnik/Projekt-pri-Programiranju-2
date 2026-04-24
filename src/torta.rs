@@ -30,6 +30,7 @@ pub struct Torta {
 }
 
 //-----------------------------------------------------------------
+
 impl Nadstropje {
     pub fn novo(okus: Okus, preliv: Preliv) -> Self {
         Self {
@@ -38,8 +39,33 @@ impl Nadstropje {
             topping: None,
         }
     }
+
+    pub fn get_okus(&self) -> &Okus {
+        &self.okus
+    }
+
+    pub fn get_preliv(&self) -> &Preliv {
+        &self.preliv
+    }
 }
 
 impl Torta {
+    pub fn nova(prvo: Nadstropje) -> Self {
+        Self {
+            spodnje: prvo,
+            ostala: Vec::new(),
+        }
+    }
 
+    pub fn dodaj_nadstropje(&mut self, n: Nadstropje) {
+        self.ostala.push(n);
+    }
+
+    pub fn dodaj_topping_zadnjemu(&mut self, topping: Topping) {
+        if let Some(last) = self.ostala.last_mut() {
+            last.topping = Some(topping);
+        } else {
+            self.spodnje.topping = Some(topping);
+        }
+    }
 }

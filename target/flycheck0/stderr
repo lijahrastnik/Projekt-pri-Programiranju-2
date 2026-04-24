@@ -1,6 +1,6 @@
 warning: unused manifest key: package.rand
-   0.010993750s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
-   0.011010167s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-281075ce90a85f9b/bin-projektna`
+   0.010715041s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
+   0.010730208s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-281075ce90a85f9b/bin-projektna`
 
 Caused by:
     No such file or directory (os error 2)
@@ -23,8 +23,8 @@ Stack backtrace:
   14: std::rt::lang_start::<()>::{closure#0}
   15: std::rt::lang_start_internal
   16: _main
-   0.014092417s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
-   0.014099583s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-6c9ca0edc9b5c9c3/test-bin-projektna`
+   0.013672083s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
+   0.013677666s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-6c9ca0edc9b5c9c3/test-bin-projektna`
 
 Caused by:
     No such file or directory (os error 2)
@@ -48,6 +48,6 @@ Stack backtrace:
   15: std::rt::lang_start_internal
   16: _main
     Checking projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)
-error: could not compile `projektna` (bin "projektna" test) due to 1 previous error; 1 warning emitted
-warning: build failed, waiting for other jobs to finish...
 error: could not compile `projektna` (bin "projektna") due to 1 previous error; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `projektna` (bin "projektna" test) due to 1 previous error; 1 warning emitted

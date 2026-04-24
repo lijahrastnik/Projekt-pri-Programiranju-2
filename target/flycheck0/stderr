@@ -1,58 +1,12 @@
-   0.031085600s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
-   0.031240500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2\target\debug\.fingerprint\projektna-0c53f631cd13ef47\bin-projektna`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
-   0.053139700s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
-   0.053196400s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2\target\debug\.fingerprint\projektna-083773c06c56be02\test-bin-projektna`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: git_midx_writer_dump
-   1: git_midx_writer_dump
-   2: git_midx_writer_dump
-   3: git_midx_writer_dump
-   4: git_filter_source_repo
-   5: git_filter_source_repo
-   6: git_filter_source_repo
-   7: git_filter_source_repo
-   8: git_filter_source_repo
-   9: git_filter_source_repo
-  10: git_filter_source_repo
-  11: git_libgit2_prerelease
-  12: <unknown>
-  13: <unknown>
-  14: <unknown>
-  15: <unknown>
-  16: git_midx_writer_dump
-  17: git_filter_source_repo
-  18: git_midx_writer_dump
-  19: BaseThreadInitThunk
-  20: RtlUserThreadStart
+   0.015993100s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\torta.rs"
+   0.016349700s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-0c53f631cd13ef47\\dep-bin-projektna"
+   0.016362700s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13421447022, nanos: 878636600 } < FileTime { seconds: 13421447409, nanos: 162685500 }
+   0.016975800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint dirty for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
+   0.017417800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-0c53f631cd13ef47\\dep-bin-projektna", reference_mtime: FileTime { seconds: 13421447022, nanos: 878636600 }, stale: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\torta.rs", stale_mtime: FileTime { seconds: 13421447409, nanos: 162685500 } }))
+   0.021617800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\torta.rs"
+   0.021648500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-083773c06c56be02\\dep-test-bin-projektna"
+   0.021654500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13421447022, nanos: 878636600 } < FileTime { seconds: 13421447409, nanos: 162685500 }
+   0.021958800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint dirty for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
+   0.021991800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-083773c06c56be02\\dep-test-bin-projektna", reference_mtime: FileTime { seconds: 13421447022, nanos: 878636600 }, stale: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\torta.rs", stale_mtime: FileTime { seconds: 13421447409, nanos: 162685500 } }))
     Checking projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.24s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.51s

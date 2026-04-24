@@ -16,3 +16,30 @@ pub enum Topping {
     Cesnja,
     Sadje,
 }
+
+//----------------------------------------------------------------
+pub struct Nadstropje {
+    okus: Okus,
+    preliv: Preliv,
+    topping: Option<Topping>,
+}
+
+pub struct Torta {
+    spodnje: Nadstropje,
+    ostala: Vec<Nadstropje>,
+}
+
+//-----------------------------------------------------------------
+impl Nadstropje {
+    pub fn novo(okus: Okus, preliv: Preliv) -> Self {
+        Self {
+            okus,
+            preliv,
+            topping: None,
+        }
+    }
+}
+
+impl Torta {
+
+}

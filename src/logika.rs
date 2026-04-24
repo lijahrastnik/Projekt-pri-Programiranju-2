@@ -1,6 +1,5 @@
 use crate::{torta::{Okus, Preliv, Topping, Torta }};
 
-
 pub fn preveri_enakost(zgenerirana_torta: &Torta, igralec_torta: &Torta) -> bool {
    
 // Preveri enakost števila nadstropij 
@@ -74,7 +73,3 @@ fn enakost_toppingov(t1: &Option<Topping>, t2: &Option<Topping>) -> bool {
         _ => false,
     }
 }
-
-
-
-// testi bodo tukaj

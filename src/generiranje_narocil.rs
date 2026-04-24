@@ -1,9 +1,7 @@
-mod torta;
-
 use rand::Rng;
 use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
 
-pub fn zgeneriraj_torto() -> Torta {
+pub fn zgeneriraj_narocilo() -> Torta {
     let mut rng = rand::thread_rng();
 
     // Zgeneriramo število nadstropij (med 1 in 5)
@@ -35,9 +33,13 @@ pub fn zgeneriraj_torto() -> Torta {
         vsa_nadstropja.push(Nadstropje::novo(okus, preliv, topping));
     }
 
-    // sestavi torto PO loopu
-    Torta {
-        spodnje: vsa_nadstropja.remove(0),
-        ostala: vsa_nadstropja,
+     // prvo nadstropje = spodnje
+    let mut torta = Torta::nova(vsa_nadstropja.remove(0));
+
+    // ostalo dodamo
+    for n in vsa_nadstropja {
+        torta.dodaj_nadstropje(n);
     }
+
+    torta
 }

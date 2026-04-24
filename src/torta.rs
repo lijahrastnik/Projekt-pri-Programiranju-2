@@ -32,11 +32,11 @@ pub struct Torta {
 //-----------------------------------------------------------------
 
 impl Nadstropje {
-    pub fn novo(okus: Okus, preliv: Preliv) -> Self {
+    pub fn novo(okus: Okus, preliv: Preliv, topping: Option<Topping>) -> Self {
         Self {
             okus,
             preliv,
-            topping: None,
+            topping,
         }
     }
 

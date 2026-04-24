@@ -1,53 +1,60 @@
-warning: unused manifest key: package.rand
-   0.010715041s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
-   0.010730208s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-281075ce90a85f9b/bin-projektna`
+   0.020265900s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
+   0.020318400s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2\target\debug\.fingerprint\projektna-b1d0544f62c4f11e\bin-projektna`
 
 Caused by:
-    No such file or directory (os error 2)
+    The system cannot find the file specified. (os error 2)
 
 Stack backtrace:
-   0: std::backtrace::Backtrace::create
-   1: cargo_util::paths::read_bytes
-   2: cargo_util::paths::read
-   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
-   0.013672083s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
-   0.013677666s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-6c9ca0edc9b5c9c3/test-bin-projektna`
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.032128700s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
+   0.032175500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2\target\debug\.fingerprint\projektna-7f0ce44c7ec3538b\test-bin-projektna`
 
 Caused by:
-    No such file or directory (os error 2)
+    The system cannot find the file specified. (os error 2)
 
 Stack backtrace:
-   0: std::backtrace::Backtrace::create
-   1: cargo_util::paths::read_bytes
-   2: cargo_util::paths::read
-   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
-    Checking projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)
-error: could not compile `projektna` (bin "projektna") due to 1 previous error; 1 warning emitted
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)
+error: could not compile `projektna` (bin "projektna") due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
-error: could not compile `projektna` (bin "projektna" test) due to 1 previous error; 1 warning emitted
+error: could not compile `projektna` (bin "projektna" test) due to 1 previous error

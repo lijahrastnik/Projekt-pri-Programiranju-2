@@ -47,6 +47,11 @@ impl Nadstropje {
     pub fn get_preliv(&self) -> &Preliv {
         &self.preliv
     }
+
+    pub fn get_topping(&self) -> &Option<Topping>{
+        &self.topping
+    }
+   
 }
 
 impl Torta {
@@ -55,6 +60,14 @@ impl Torta {
             spodnje: prvo,
             ostala: Vec::new(),
         }
+    }
+
+    pub fn get_ostala (&self) -> &Vec<Nadstropje> {
+        &self.ostala
+    }
+
+    pub fn get_spodnje (&self) -> &Nadstropje{
+        &self.spodnje
     }
 
     pub fn dodaj_nadstropje(&mut self, n: Nadstropje) {

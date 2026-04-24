@@ -1,12 +1,53 @@
-   0.023266500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs"
-   0.023321900s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-0c53f631cd13ef47\\dep-bin-projektna"
-   0.023334700s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13421504861, nanos: 545584200 } < FileTime { seconds: 13421504864, nanos: 922112200 }
-   0.023617800s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint dirty for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
-   0.023671000s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-0c53f631cd13ef47\\dep-bin-projektna", reference_mtime: FileTime { seconds: 13421504861, nanos: 545584200 }, stale: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", stale_mtime: FileTime { seconds: 13421504864, nanos: 922112200 } }))
-   0.034148300s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs"
-   0.034208500s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-083773c06c56be02\\dep-test-bin-projektna"
-   0.034228300s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13421504861, nanos: 545584200 } < FileTime { seconds: 13421504864, nanos: 922112200 }
-   0.034683300s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint dirty for projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", Edition2024) }
-   0.034751200s  INFO prepare_target{force=false package_id=projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\target\\debug\\.fingerprint\\projektna-083773c06c56be02\\dep-test-bin-projektna", reference_mtime: FileTime { seconds: 13421504861, nanos: 545584200 }, stale: "C:\\Users\\janus\\Desktop\\faks\\Prog 2 projekt\\Projekt-pri-Programiranju-2\\src\\main.rs", stale_mtime: FileTime { seconds: 13421504864, nanos: 922112200 } }))
-    Checking projektna v0.1.0 (C:\Users\janus\Desktop\faks\Prog 2 projekt\Projekt-pri-Programiranju-2)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+warning: unused manifest key: package.rand
+   0.010993750s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: false }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
+   0.011010167s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-281075ce90a85f9b/bin-projektna`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.014092417s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint: fingerprint error for projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)/Check { test: true }/TargetInner { name: "projektna", doc: true, ..: with_path("/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/src/main.rs", Edition2024) }
+   0.014099583s  INFO prepare_target{force=false package_id=projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2) target="projektna"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2/target/debug/.fingerprint/projektna-6c9ca0edc9b5c9c3/test-bin-projektna`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking projektna v0.1.0 (/Users/lijahrastnik/Documents/fmf/drugi/prog2/projekt/Projekt-pri-Programiranju-2)
+error: could not compile `projektna` (bin "projektna" test) due to 1 previous error; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `projektna` (bin "projektna") due to 1 previous error; 1 warning emitted

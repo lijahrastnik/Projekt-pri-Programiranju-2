@@ -1,5 +1,6 @@
-//??????? mogoce delava kje drugje (Bevy)
+//??????? mogoce delava kje drugje (Bevy, bracket - lib, macroquad)
 
+//vse je treba prepisat v macroquad strukturo
 
 use std::fmt;
 

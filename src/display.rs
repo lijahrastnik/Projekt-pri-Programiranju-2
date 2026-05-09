@@ -2,6 +2,89 @@
 
 //vse je treba prepisat v macroquad strukturo
 
+
+
+use macroquad::prelude::*;
+
+use crate::torta::{Torta, Okus, Preliv, Topping};
+
+pub fn narisi_torta(torta: &Torta, x: f32, y_tla: f32) {
+    let vsa_nadstropja = torta.get_ostala();
+    let spodnje = torta.get_spodnje();
+    
+
+    let mut vse_plasti = vec![spodnje];
+    for n in vsa_nadstropja {
+        vse_plasti.push(n);
+    }
+
+    let mut trenutni_y = y_tla;
+
+    
+    for n in vse_plasti.iter() {
+        let barva_biskvita = okus_v_barvo(n.get_okus());
+        let barva_preliva = preliv_v_barvo(n.get_preliv());
+
+        
+        draw_rectangle(x - 100.0, trenutni_y - 40.0, 200.0, 40.0, barva_biskvita);
+        
+        draw_rectangle_lines(x - 100.0, trenutni_y - 40.0, 200.0, 40.0, 2.0, BLACK);
+        
+        
+        draw_rectangle(x - 100.0, trenutni_y - 50.0, 200.0, 10.0, barva_preliva);
+        
+       
+        trenutni_y -= 55.0; 
+    }
+
+    
+    if let Some(zadnje) = vse_plasti.last() {
+        if let Some(t) = zadnje.get_topping() {
+            let emoji = match t {
+                Topping::Svecka => "🕯️",
+                Topping::Cesnja => "🍒",
+                Topping::Sadje => "🍓",
+            };
+            
+            draw_text(emoji, x - 15.0, trenutni_y + 5.0, 40.0, WHITE);
+        }
+    }
+}
+
+
+
+fn okus_v_barvo(okus: &Okus) -> Color {
+    match okus {
+        Okus::Cokolada => BROWN,
+        Okus::Vanilija => BEIGE,
+        Okus::Jagoda => PINK,
+        Okus::Drugo(_) => WHITE,
+    }
+}
+
+fn preliv_v_barvo(preliv: &Preliv) -> Color {
+    match preliv {
+        Preliv::Cokoladni => DARKBROWN,
+        Preliv::Sadni => RED,
+        Preliv::Karamelni => ORANGE,
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 use std::fmt;
 
 use crate::{Nadstropje, Okus, Preliv, Topping, Torta};
@@ -38,6 +121,19 @@ impl Topping {
         }
     }
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
 impl fmt::Display for Nadstropje {

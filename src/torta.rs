@@ -81,4 +81,12 @@ impl Torta {
             self.spodnje.topping = Some(topping);
         }
     }
+
+    pub fn nastavi_preliv_zadnjemu(&mut self, novi_preliv: Preliv) {
+        if let Some(last) = self.ostala.last_mut() {
+            last.preliv = novi_preliv; 
+        } else {
+            self.spodnje.preliv = novi_preliv;
+        }
+    }
 }

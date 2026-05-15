@@ -8,7 +8,7 @@ use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
 
 
 
-#[macroquad::main("Purple Place Cake Factory")]
+#[macroquad::main("Integral place")]
 async fn main() {
     let mut narocilo = generiranje_narocil::zgeneriraj_narocilo();
     let mut igralec_torta: Option<Torta> = None;
@@ -55,12 +55,14 @@ async fn main() {
             if let Some(ref t) = igralec_torta {
                 if logika::preveri_enakost(&narocilo, t) {
                     
-                    println!("TORTA JE PRAVILNA!"); 
+                    println!("PRAVILNO");
+                    draw_text("TORTA JE PRAVILNA!", 20.0,20.0,40.0, DARKGRAY); 
                 }
             }
         }
 
         //RISANJE
+      
         draw_text("NAROCILO (N za novo)", 50.0, 30.0, 20.0, DARKGRAY);
         display::narisi_torta(&narocilo, 200.0, 550.0);
 

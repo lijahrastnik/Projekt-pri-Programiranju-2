@@ -70,9 +70,16 @@ impl Torta {
         &self.spodnje
     }
 
-    pub fn dodaj_nadstropje(&mut self, n: Nadstropje) {
-        self.ostala.push(n);
+    pub fn dodaj_nadstropje(&mut self, novo_nadstropje: Nadstropje) {
+        if let Some(last) = self.ostala.last_mut() {
+            last.topping = None;
+        } else {
+            self.spodnje.topping = None;
+        }
+
+        self.ostala.push(novo_nadstropje);
     }
+
 
     pub fn dodaj_topping_zadnjemu(&mut self, topping: Topping) {
         if let Some(last) = self.ostala.last_mut() {
@@ -89,4 +96,14 @@ impl Torta {
             self.spodnje.preliv = novi_preliv;
         }
     }
+
+    pub fn nastavi_okus_zadnjemu(&mut self, novi_okus: Okus) {
+        if let Some(last) = self.ostala.last_mut() {
+            last.okus = novi_okus; 
+        } else {
+            self.spodnje.okus = novi_okus;
+        }
+    }
+
+
 }

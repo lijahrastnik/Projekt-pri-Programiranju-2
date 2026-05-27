@@ -23,22 +23,28 @@ pub fn zgeneriraj_narocilo() -> Torta {
             _ => Preliv::Karamelni,
         };
 
-        let topping = match rng.gen_range(0..4) {
-            0 => Some(Topping::Svecka),
-            1 => Some(Topping::Cesnja),
-            2 => Some(Topping::Sadje),
-            _ => None,
-        };
-
-        vsa_nadstropja.push(Nadstropje::novo(okus, preliv, topping));
+        
+        vsa_nadstropja.push(Nadstropje::novo(okus, preliv, None));
     }
 
-     // prvo nadstropje = spodnje
+    // Prvo nadstropje vzamemo kot spodnje
     let mut torta = Torta::nova(vsa_nadstropja.remove(0));
 
-    // ostalo dodamo
+    // Ostala nadstropja dodamo na torto
     for n in vsa_nadstropja {
         torta.dodaj_nadstropje(n);
+    }
+
+    // Na koncu, ko je torta zgrajena, naključno določimo okrasek
+    let topping = match rng.gen_range(0..4) {
+        0 => Some(Topping::Svecka),
+        1 => Some(Topping::Cesnja),
+        2 => Some(Topping::Sadje),
+        _ => None, 
+    };
+
+    if let Some(t) = topping {
+        torta.dodaj_topping_zadnjemu(t);
     }
 
     torta

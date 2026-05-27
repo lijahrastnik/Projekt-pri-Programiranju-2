@@ -5,71 +5,68 @@
 
 
 use macroquad::prelude::*;
+use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
 
-use crate::torta::{Torta, Okus, Preliv, Topping};
 
-pub fn narisi_torta(torta: &Torta, x: f32, y_tla: f32) {
-    let vsa_nadstropja = torta.get_ostala();
-    let spodnje = torta.get_spodnje();
-    
+const BARVA_COKOLADA: Color = Color::new(0.36, 0.21, 0.14, 1.0);  
+const BARVA_VANILIJA: Color = Color::new(0.96, 0.90, 0.71, 1.0);  
+const BARVA_JAGODA: Color = Color::new(0.94, 0.53, 0.61, 1.0);    
 
-    let mut vse_plasti = vec![spodnje];
-    for n in vsa_nadstropja {
-        vse_plasti.push(n);
+const PRELIV_COKOLADA: Color = Color::new(0.24, 0.12, 0.07, 1.0); 
+const PRELIV_SADNI: Color = Color::new(0.85, 0.11, 0.25, 1.0);    
+const PRELIV_KARAMELA: Color = Color::new(0.82, 0.51, 0.22, 1.0); 
+
+pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
+    // Sestavimo seznam vseh nadstropij od spodaj navzgor
+    let mut vsa_nadstropja = vec![torta.get_spodnje()];
+    for n in torta.get_ostala().iter() {
+        vsa_nadstropja.push(n);
     }
 
-    let mut trenutni_y = y_tla;
-
+    let mut trenutni_y = y_base;
     
-    for n in vse_plasti.iter() {
-        let barva_biskvita = okus_v_barvo(n.get_okus());
-        let barva_preliva = preliv_v_barvo(n.get_preliv());
+    let mut sirina = 180.0; 
+    let visina_biskvita = 40.0;
+    let visina_preliva = 10.0;
 
-        
-        draw_rectangle(x - 100.0, trenutni_y - 40.0, 200.0, 40.0, barva_biskvita);
-        
-        draw_rectangle_lines(x - 100.0, trenutni_y - 40.0, 200.0, 40.0, 2.0, BLACK);
-        
-        
-        draw_rectangle(x - 100.0, trenutni_y - 50.0, 200.0, 10.0, barva_preliva);
-        
-       
-        trenutni_y -= 55.0; 
-    }
+    for nadstropje in vsa_nadstropja {
+        trenutni_y -= visina_biskvita;
+        let trenutni_x = x - (sirina / 2.0);
 
-    
-    if let Some(zadnje) = vse_plasti.last() {
-        if let Some(t) = zadnje.get_topping() {
-            let emoji = match t {
+        // DOLOČITEV BARVE BISKVITA
+        let barva_biskvita = match nadstropje.get_okus() {
+            Okus::Cokolada => BARVA_COKOLADA,
+            Okus::Vanilija => BARVA_VANILIJA,
+            Okus::Jagoda => BARVA_JAGODA,
+            Okus::Drugo(_) => GRAY,
+        };
+
+        // IZRIS KLASIČNEGA BISKVITA (Zgolj zamenjana barva)
+        draw_rectangle(trenutni_x, trenutni_y, sirina, visina_biskvita, barva_biskvita);
+
+        // DOLOČITEV BARVE IN IZRIS PRELIVA
+        let barva_preliva = match nadstropje.get_preliv() {
+            Preliv::Cokoladni => PRELIV_COKOLADA,
+            Preliv::Sadni => PRELIV_SADNI,
+            Preliv::Karamelni => PRELIV_KARAMELA,
+        };
+
+        // Preliv se izriše na vrhu biskvita
+        draw_rectangle(trenutni_x + 4.0, trenutni_y, sirina - 8.0, visina_preliva, barva_preliva);
+
+        // IZRIS OKRASKA (TOPPINGA)
+        if let Some(topping) = nadstropje.get_topping() {
+            let emoji = match topping {
                 Topping::Svecka => "🕯️",
                 Topping::Cesnja => "🍒",
                 Topping::Sadje => "🍓",
             };
-            
-            draw_text(emoji, x - 15.0, trenutni_y + 5.0, 40.0, WHITE);
+            draw_text(emoji, x - 12.0, trenutni_y - 10.0, 30.0, BLACK);
         }
+
+        sirina -= 25.0; 
     }
 }
-
-
-
-fn okus_v_barvo(okus: &Okus) -> Color {
-    match okus {
-        Okus::Cokolada => BROWN,
-        Okus::Vanilija => BEIGE,
-        Okus::Jagoda => PINK,
-        Okus::Drugo(_) => WHITE,
-    }
-}
-
-fn preliv_v_barvo(preliv: &Preliv) -> Color {
-    match preliv {
-        Preliv::Cokoladni => DARKBROWN,
-        Preliv::Sadni => RED,
-        Preliv::Karamelni => ORANGE,
-    }
-}
-
 
 
 

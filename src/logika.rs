@@ -1,49 +1,46 @@
-use crate::{torta::{Okus, Preliv, Topping, Torta }};
+use crate::torta::{Okus, Preliv, Topping, Torta};
 
 pub fn preveri_enakost(zgenerirana_torta: &Torta, igralec_torta: &Torta) -> bool {
-   
-// Preveri enakost števila nadstropij 
+    // Preveri enakost števila nadstropij 
     if zgenerirana_torta.get_ostala().len() != igralec_torta.get_ostala().len() {
         println!("Napačno število nadstropij!");
         return false; 
     }
 
-// Definiramo seznam vseh nadstropij, da bomo kasneje lažje preverjali
+    // Sestavimo sezname referenc na nadstropja
     let mut vsa_zgenerirana = vec![zgenerirana_torta.get_spodnje()];
-    vsa_zgenerirana.extend(zgenerirana_torta.get_ostala().into_iter());
+    for n in zgenerirana_torta.get_ostala().iter() {
+        vsa_zgenerirana.push(n);
+    }
 
     let mut vsa_igralec = vec![igralec_torta.get_spodnje()];
-    vsa_igralec.extend(igralec_torta.get_ostala().iter());
+    for n in igralec_torta.get_ostala().iter() {
+        vsa_igralec.push(n);
+    }
 
-
-// Preveri okuse
+    // Preverimo vse lastnosti za vsako nadstropje v eni zanki
     for i in 0..vsa_zgenerirana.len() {
-        if !enakost_okusov(&vsa_zgenerirana[i].get_okus(), &vsa_igralec[i].get_okus()) {
+        // Preveri okuse
+        if !enakost_okusov(vsa_zgenerirana[i].get_okus(), vsa_igralec[i].get_okus()) {
             println!("Napačen okus v {}. nadstropju!", i + 1);
             return false;
         }
-    }
 
-// Preveri prelive 
-    for i in 0..vsa_zgenerirana.len() {
-        if !enakost_prelivov(&vsa_zgenerirana[i].get_preliv(), &vsa_igralec[i].get_preliv()) {
+        // Preveri prelive 
+        if !enakost_prelivov(vsa_zgenerirana[i].get_preliv(), vsa_igralec[i].get_preliv()) {
             println!("Napačen preliv v {}. nadstropju!", i + 1);
             return false;
         }
-    }
 
-// Preveri toppinge
-    for i in 0..vsa_zgenerirana.len() {
-        if !enakost_toppingov(&vsa_zgenerirana[i].get_topping(), &vsa_igralec[i].get_topping()) {
+        // Preveri toppinge
+        if !enakost_toppingov(vsa_zgenerirana[i].get_topping(), vsa_igralec[i].get_topping()) {
             println!("Napačen topping v {}. nadstropju!", i + 1);
             return false;
         }
     }
-
   
     true
 }
-
 
 fn enakost_okusov(o1: &Okus, o2: &Okus) -> bool {
     match (o1, o2) {

@@ -1,9 +1,3 @@
-//??????? mogoce delava kje drugje (Bevy, bracket - lib, macroquad)
-
-//vse je treba prepisat v macroquad strukturo
-
-
-
 use macroquad::prelude::*;
 use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
 
@@ -54,16 +48,64 @@ pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
         // Preliv se izriše na vrhu biskvita
         draw_rectangle(trenutni_x + 4.0, trenutni_y, sirina - 8.0, visina_preliva, barva_preliva);
 
-        // IZRIS OKRASKA (TOPPINGA)
+        // IZRIS TOPPINGA
         if let Some(topping) = nadstropje.get_topping() {
-            let emoji = match topping {
-                Topping::Svecka => "🕯️",
-                Topping::Cesnja => "🍒",
-                Topping::Sadje => "🍓",
-            };
-            draw_text(emoji, x - 12.0, trenutni_y - 10.0, 30.0, BLACK);
-        }
+            match topping {
 
+                // ČEŠNJA
+                Topping::Cesnja => {
+                    // cesnja
+                    draw_circle(x - 6.0, trenutni_y - 8.0, 6.0, RED);
+                    draw_circle(x + 6.0, trenutni_y - 8.0, 6.0, RED);
+                
+                    // peclja
+                    draw_line(
+                        x - 6.0,
+                        trenutni_y - 14.0,
+                        x,
+                        trenutni_y - 24.0,
+                        2.0,
+                        DARKGREEN,
+                    );
+                
+                    draw_line(
+                        x + 6.0,
+                        trenutni_y - 14.0,
+                        x,
+                        trenutni_y - 24.0,
+                        2.0,
+                        DARKGREEN,
+                    );
+                }
+            
+                // SADJE
+                Topping::Sadje => {
+                    draw_circle(x - 10.0, trenutni_y - 8.0, 5.0, ORANGE);
+                    draw_circle(x,       trenutni_y - 12.0, 5.0, RED);
+                    draw_circle(x + 10.0, trenutni_y - 8.0, 5.0, PINK);
+                }
+            
+                // SVEČKA
+                Topping::Svecka => {
+                    // telo svečke
+                    draw_rectangle(
+                        x - 2.0,
+                        trenutni_y - 20.0,
+                        4.0,
+                        14.0,
+                        YELLOW,
+                    );
+                
+                    // plamen
+                    draw_circle(
+                        x,
+                        trenutni_y - 24.0,
+                        4.0,
+                        ORANGE,
+                    );
+                }
+            };
+        }
         sirina -= 25.0; 
     }
 }

@@ -1,7 +1,7 @@
 use macroquad::prelude::*;
 use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
 
-
+//DEFINIRANE BARVE ZA PRELIVE IN NADSTROPJA
 const BARVA_COKOLADA: Color = Color::new(0.36, 0.21, 0.14, 1.0);  
 const BARVA_VANILIJA: Color = Color::new(0.96, 0.90, 0.71, 1.0);  
 const BARVA_JAGODA: Color = Color::new(0.94, 0.53, 0.61, 1.0);    
@@ -11,7 +11,7 @@ const PRELIV_SADNI: Color = Color::new(0.85, 0.11, 0.25, 1.0);
 const PRELIV_KARAMELA: Color = Color::new(0.82, 0.51, 0.22, 1.0); 
 
 pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
-    // Sestavimo seznam vseh nadstropij od spodaj navzgor
+    // SESTAVIMO SEZNAM VSEH NADSTROPIJ OD SPODAJ NAVZGOR (spodnje + ostala)
     let mut vsa_nadstropja = vec![torta.get_spodnje()];
     for n in torta.get_ostala().iter() {
         vsa_nadstropja.push(n);
@@ -19,7 +19,7 @@ pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
 
     let mut trenutni_y = y_base;
     
-    let mut sirina = 180.0; 
+    let mut sirina = 180.0; //ZAČETNA ŠIRINA NAJNIŽJEGA NADSTROPJA
     let visina_biskvita = 40.0;
     let visina_preliva = 10.0;
 
@@ -33,19 +33,20 @@ pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
             Okus::Vanilija => BARVA_VANILIJA,
             Okus::Jagoda => BARVA_JAGODA,
             Okus::Drugo(_) => GRAY,
+
         };
 
-        // IZRIS KLASIČNEGA BISKVITA (Zgolj zamenjana barva)
+        
         draw_rectangle(trenutni_x, trenutni_y, sirina, visina_biskvita, barva_biskvita);
 
-        // DOLOČITEV BARVE IN IZRIS PRELIVA
+        // DOLOČITEV BARVE PRELIVA
         let barva_preliva = match nadstropje.get_preliv() {
             Preliv::Cokoladni => PRELIV_COKOLADA,
             Preliv::Sadni => PRELIV_SADNI,
             Preliv::Karamelni => PRELIV_KARAMELA,
         };
 
-        // Preliv se izriše na vrhu biskvita
+        
         draw_rectangle(trenutni_x + 4.0, trenutni_y, sirina - 8.0, visina_preliva, barva_preliva);
 
         // IZRIS TOPPINGA
@@ -121,104 +122,3 @@ pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
 
 
 
-
-
-/* 
-use std::fmt;
-
-use crate::{Nadstropje, Okus, Preliv, Topping, Torta};
-
-impl fmt::Display for Okus {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Okus::Cokolada => write!(f, "Čokolada"),
-            Okus::Vanilija => write!(f, "Vanilija"),
-            Okus::Jagoda => write!(f, "Jagoda"),
-            Okus::Drugo(s) => write!(f, "{s}"),
-        }
-    }
-}
-
-impl Preliv {
-    fn narisi(&self, sirina: usize) -> String {
-        let znak = match self {
-            Preliv::Cokoladni => "~",
-            Preliv::Sadni => "^",
-            Preliv::Karamelni => "=",
-        };
-
-        znak.repeat(sirina)
-    }
-}
-
-impl Topping {
-    fn narisi(&self) -> &str {
-        match self {
-            Topping::Svecka => "🕯",
-            Topping::Cesnja => "🍒",
-            Topping::Sadje => "🍓",
-        }
-    }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-impl fmt::Display for Nadstropje {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let okus = self.okus();
-        let notranja_sirina = okus.len().max(10);
-
-        let topping = match self.topping() {
-            Some(t) => t.narisi(),
-            None => " ",
-        };
-
-        writeln!(
-            f,
-            "  {:^width$}",
-            topping,
-            width = notranja_sirina
-        )?;
-
-        writeln!(
-            f,
-            "  {}",
-            self.preliv().narisi(notranja_sirina + 4)
-        )?;
-
-        writeln!(
-            f,
-            " | {:^width$} |",
-            okus,
-            width = notranja_sirina
-        )?;
-
-        writeln!(
-            f,
-            " |{}|",
-            "_".repeat(notranja_sirina + 2)
-        )
-    }
-}
-
-impl fmt::Display for Torta {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        for n in self.ostala().iter().rev() {
-            writeln!(f, "{n}")?;
-        }
-
-        writeln!(f, "{}", self.spodnje())
-    }
-} */

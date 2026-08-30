@@ -1,16 +1,21 @@
+
+#[derive(PartialEq)]
 pub enum Okus {
     Cokolada,
     Vanilija,
     Jagoda,
     Drugo(String),
+    
 }
 
+#[derive(PartialEq)]
 pub enum Preliv {
     Cokoladni,
     Sadni,
     Karamelni,
 }
 
+#[derive(PartialEq)]
 pub enum Topping {
     Svecka,
     Cesnja,
@@ -18,12 +23,14 @@ pub enum Topping {
 }
 
 //----------------------------------------------------------------
+#[derive(PartialEq)]
 pub struct Nadstropje {
     okus: Okus,
     preliv: Preliv,
     topping: Option<Topping>,
 }
 
+#[derive(PartialEq)]
 pub struct Torta {
     spodnje: Nadstropje,
     ostala: Vec<Nadstropje>,
@@ -32,6 +39,7 @@ pub struct Torta {
 //-----------------------------------------------------------------
 
 impl Nadstropje {
+    //USTVARI NOVO NADSTROPJE Z DANIMI LASTNOSTMI
     pub fn novo(okus: Okus, preliv: Preliv, topping: Option<Topping>) -> Self {
         Self {
             okus,
@@ -55,6 +63,7 @@ impl Nadstropje {
 }
 
 impl Torta {
+    //USTVARI NOVO TORTO, KI IMA ZAČETNO SPODNJE NADSTROPJE
     pub fn nova(prvo: Nadstropje) -> Self {
         Self {
             spodnje: prvo,
@@ -71,6 +80,7 @@ impl Torta {
     }
 
     pub fn dodaj_nadstropje(&mut self, novo_nadstropje: Nadstropje) {
+        //OB DODAJANJU NOVEGA NADSTROPJA SE OKRAS NA PREJ NAJVIŠJEM NADSTROPJU ODSTRANI
         if let Some(last) = self.ostala.last_mut() {
             last.topping = None;
         } else {

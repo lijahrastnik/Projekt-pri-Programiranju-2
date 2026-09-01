@@ -6,5 +6,5 @@ Poleg osnovne funkcionalnosti bi rada raziskala tudi možnost načina za več ig
 
 
 ## Avtorja:
-Lija Hrastnik
+Lija Hrastnik,
 Januš Miklavčič

@@ -1,5 +1,6 @@
 
 #[derive(PartialEq)]
+#[allow(dead_code)]
 pub enum Okus {
     Cokolada,
     Vanilija,

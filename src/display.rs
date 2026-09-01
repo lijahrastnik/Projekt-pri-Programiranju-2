@@ -1,5 +1,5 @@
 use macroquad::prelude::*;
-use crate::torta::{Torta, Nadstropje, Okus, Preliv, Topping};
+use crate::torta::{Torta, Okus, Preliv, Topping};
 
 //DEFINIRANE BARVE ZA PRELIVE IN NADSTROPJA
 const BARVA_COKOLADA: Color = Color::new(0.36, 0.21, 0.14, 1.0);  

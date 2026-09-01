@@ -216,9 +216,15 @@ pub async fn poganjaj_igro() {
 
                 draw_text("Pritisni SPACE za ponovno igro", 240.0, 450.0, 20.0, DARKGRAY);
 
-                //PONOVNI ZAGON IGRE
+                // PONOVNI ZAGON IGRE
                 if is_key_pressed(KeyCode::Space) {
                     ime_igralca.clear();
+                    tocke = 0;
+                    igralec_torta = None;
+                    torta_je_pravilna = false;
+
+                    while get_char_pressed().is_some() {}
+
                     stanje = StanjeIgre::VnosImena;
                 }
             }

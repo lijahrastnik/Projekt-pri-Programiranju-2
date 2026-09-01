@@ -1,4 +1,4 @@
-    use macroquad::prelude::*;
+    
 
     mod torta;
     mod logika;

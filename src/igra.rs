@@ -186,10 +186,18 @@ pub async fn poganjaj_igro() {
                 draw_text("NAROCILO", 50.0, 30.0, 20.0, DARKGRAY);
                 display::narisi_torta(&narocilo, 200.0, 550.0);
 
-                draw_text("TVOJA TORTA (1-3 Okus, SPACE Novo nadstropje, 4-6 Preliv, T/C/S Okras, R Reset, ENTER Preveri)", 350.0, 30.0, 15.0, BLACK);
-                if let Some(ref t) = igralec_torta {
-                    display::narisi_torta(t, 600.0, 550.0);
-                }
+                
+    draw_rectangle(440.0, 20.0, 270.0, 75.0, Color::new(0.9, 0.9, 0.9, 0.85));
+    draw_rectangle_lines(440.0, 20.0, 270.0, 75.0, 1.5, DARKGRAY);
+
+    
+    draw_text("1-3: Okus  •  SPACE: Nadstropje", 450.0, 40.0, 13.0, BLACK);
+    draw_text("4-6: Preliv  •  T/C/S: Okras", 450.0, 58.0, 13.0, BLACK);
+    draw_text("R: Reset  •  ENTER: Preveri", 450.0, 76.0, 13.0, DARKGRAY);
+
+    if let Some(ref t) = igralec_torta {
+    display::narisi_torta(t, 600.0, 550.0);
+    }
 
                 let besedilo_tocke = format!("TOCKE: {}", tocke);
                 draw_text(&besedilo_tocke, 50.0, 70.0, 25.0, BLUE);

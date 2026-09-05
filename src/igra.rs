@@ -134,15 +134,15 @@ pub async fn poganjaj_igro() {
                     if let Some(ref mut t) = igralec_torta {
                         t.nastavi_okus_zadnjemu(okus);
                     } else {
-                        let n = Nadstropje::novo(okus, Preliv::Cokoladni, None); 
+                        let n = Nadstropje::novo(okus, Preliv::Cokoladni); 
                         igralec_torta = Some(Torta::nova(n));
                     }
                 }
                 // TIPKA SPACE
                 if !torta_je_pravilna && is_key_pressed(KeyCode::Space) {
                     if let Some(ref mut t) = igralec_torta {
-                        if t.get_ostala().len() < 4 { 
-                            let n = Nadstropje::novo(Okus::Cokolada, Preliv::Cokoladni, None);
+                        if t.get_nadstropja().len() < 5 { 
+                            let n = Nadstropje::novo(Okus::Cokolada, Preliv::Cokoladni);
                             t.dodaj_nadstropje(n);
                         }
                     }
@@ -158,9 +158,9 @@ pub async fn poganjaj_igro() {
                 //TIPKE TCS
                 if !torta_je_pravilna {
                     if let Some(ref mut t) = igralec_torta {
-                        if is_key_pressed(KeyCode::T) { t.dodaj_topping_zadnjemu(Topping::Svecka); }
-                        if is_key_pressed(KeyCode::C) { t.dodaj_topping_zadnjemu(Topping::Cesnja); }
-                        if is_key_pressed(KeyCode::S) { t.dodaj_topping_zadnjemu(Topping::Sadje); }
+                        if is_key_pressed(KeyCode::T) { t.dodaj_topping(Topping::Svecka); }
+                        if is_key_pressed(KeyCode::C) { t.dodaj_topping(Topping::Cesnja); }
+                        if is_key_pressed(KeyCode::S) { t.dodaj_topping(Topping::Sadje); }
                     }
                 }
 

@@ -25,7 +25,7 @@ pub fn zgeneriraj_narocilo() -> Torta {
         };
 
         
-        vsa_nadstropja.push(Nadstropje::novo(okus, preliv, None));
+        vsa_nadstropja.push(Nadstropje::novo(okus, preliv));
     }
 
     // PRVO NADSTROPJE VZAMEMO KOT SPODNJE
@@ -45,7 +45,7 @@ pub fn zgeneriraj_narocilo() -> Torta {
     };
 
     if let Some(t) = topping {
-        torta.dodaj_topping_zadnjemu(t);
+        torta.dodaj_topping(t);
     }
 
     torta

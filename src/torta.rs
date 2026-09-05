@@ -28,24 +28,22 @@ pub enum Topping {
 pub struct Nadstropje {
     okus: Okus,
     preliv: Preliv,
-    topping: Option<Topping>,
 }
 
 #[derive(PartialEq)]
 pub struct Torta {
-    spodnje: Nadstropje,
-    ostala: Vec<Nadstropje>,
+    nadstropja: Vec<Nadstropje>,
+    topping: Option<Topping>,
 }
 
 //-----------------------------------------------------------------
 
 impl Nadstropje {
     //USTVARI NOVO NADSTROPJE Z DANIMI LASTNOSTMI
-    pub fn novo(okus: Okus, preliv: Preliv, topping: Option<Topping>) -> Self {
+    pub fn novo(okus: Okus, preliv: Preliv) -> Self {
         Self {
             okus,
-            preliv,
-            topping,
+            preliv
         }
     }
 
@@ -56,65 +54,43 @@ impl Nadstropje {
     pub fn get_preliv(&self) -> &Preliv {
         &self.preliv
     }
-
-    pub fn get_topping(&self) -> &Option<Topping>{
-        &self.topping
     }
-   
-}
 
 impl Torta {
     //USTVARI NOVO TORTO, KI IMA ZAČETNO SPODNJE NADSTROPJE
     pub fn nova(prvo: Nadstropje) -> Self {
         Self {
-            spodnje: prvo,
-            ostala: Vec::new(),
+            nadstropja: vec![prvo],
+            topping: None,
         }
     }
 
-    pub fn get_ostala (&self) -> &Vec<Nadstropje> {
-        &self.ostala
+    pub fn get_nadstropja (&self) -> &Vec<Nadstropje> {
+        &self.nadstropja
     }
 
-    pub fn get_spodnje (&self) -> &Nadstropje{
-        &self.spodnje
+    pub fn get_topping(&self) -> Option<&Topping> {
+        self.topping.as_ref()
     }
 
     pub fn dodaj_nadstropje(&mut self, novo_nadstropje: Nadstropje) {
-        //OB DODAJANJU NOVEGA NADSTROPJA SE OKRAS NA PREJ NAJVIŠJEM NADSTROPJU ODSTRANI
-        if let Some(last) = self.ostala.last_mut() {
-            last.topping = None;
-        } else {
-            self.spodnje.topping = None;
-        }
-
-        self.ostala.push(novo_nadstropje);
+        self.nadstropja.push(novo_nadstropje);
     }
 
 
-    pub fn dodaj_topping_zadnjemu(&mut self, topping: Topping) {
-        if let Some(last) = self.ostala.last_mut() {
-            last.topping = Some(topping);
-        } else {
-            self.spodnje.topping = Some(topping);
-        }
+    pub fn dodaj_topping(&mut self, topping: Topping) {
+        self.topping = Some(topping);
     }
 
     pub fn nastavi_preliv_zadnjemu(&mut self, novi_preliv: Preliv) {
-        if let Some(last) = self.ostala.last_mut() {
-            last.preliv = novi_preliv; 
-        } else {
-            self.spodnje.preliv = novi_preliv;
+        if let Some(last) = self.nadstropja.last_mut() {
+            last.preliv = novi_preliv;
         }
     }
 
     pub fn nastavi_okus_zadnjemu(&mut self, novi_okus: Okus) {
-        if let Some(last) = self.ostala.last_mut() {
-            last.okus = novi_okus; 
-        } else {
-            self.spodnje.okus = novi_okus;
+        if let Some(last) = self.nadstropja.last_mut() {
+            last.okus = novi_okus;
         }
     }
-
-
-}
+    }

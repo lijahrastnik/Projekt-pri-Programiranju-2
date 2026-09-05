@@ -12,10 +12,7 @@ const PRELIV_KARAMELA: Color = Color::new(0.82, 0.51, 0.22, 1.0);
 
 pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
     // SESTAVIMO SEZNAM VSEH NADSTROPIJ OD SPODAJ NAVZGOR (spodnje + ostala)
-    let mut vsa_nadstropja = vec![torta.get_spodnje()];
-    for n in torta.get_ostala().iter() {
-        vsa_nadstropja.push(n);
-    }
+    let vsa_nadstropja = torta.get_nadstropja();
 
     let mut trenutni_y = y_base;
     
@@ -50,7 +47,7 @@ pub fn narisi_torta(torta: &Torta, x: f32, y_base: f32) {
         draw_rectangle(trenutni_x + 4.0, trenutni_y, sirina - 8.0, visina_preliva, barva_preliva);
 
         // IZRIS TOPPINGA
-        if let Some(topping) = nadstropje.get_topping() {
+        if let Some(topping) = torta.get_topping() {
             match topping {
 
                 // ČEŠNJA
